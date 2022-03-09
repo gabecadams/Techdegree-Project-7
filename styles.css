@@ -12,45 +12,66 @@
     grid-template-areas: "header""nav""main";
 }
 
+/* Header */
+
 header {
     grid-area: header;
-    display: flex;
-    justify-content: space-between;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 20px;
-    padding-bottom: 15px;
-    background-color: #7477bf;
     color: #fff;
-    }
+    background-color: #7477bf;
+    display: flex;
+    align-items: center;
+    padding: 3%;
+}
+
+.bell {
+    display: flex;
+    flex-basis: 20%;
+    justify-content: flex-end;
+    height: 20px;
+    width: 20px; 
+}
+
+.notifications-dot {
+    height: 8px;
+    width: 8px;
+    background: rgb(92, 216, 43);
+    border-radius: 50%;
+    margin-bottom: 25px;
+}
+
+.line-break {
+    border-right: 1px solid rgb(145, 142, 142);
+    height: 3.5rem;
+    flex-basis: 15%;
+    margin-left: -15px;
+}
 
 .profile {
     display: flex;
     flex-direction: row;
+    justify-content: end;
 }
-
-.bell {
-    height: 25px;
-    width: 25px;
-}
-
 
 .profile-pic {
-    width: 40px;
     height: auto;
-    padding-right: 10px;
+    width: 25%;
+    border-radius: 100%;
 }
+
+.name {
+ padding-left: 10px;
+}
+
+/* Navigation */
 
 nav {
     grid-area: nav;
 }
 
-
 nav {
     display: flex;
     justify-content: space-evenly;
-    background-color: #464557;
-
+    background-color: #e3e3e9;
 }
 
 nav img {
@@ -60,20 +81,31 @@ nav img {
     padding-bottom: 10px;
 }
 
+/* Dashboard */
+
 main {
     grid-area: main;
+}
+
+.main-header {
+    display: flex;
+    flex-direction: row;
 }
 
 .headline{
     padding: 15px;
     height: 50px;
-    border-left: 1px solid;
-    border-bottom: 1px solid
+}
+
+.tab {
+    width: 100%;
+    background: rgb(236, 235, 235);
+    border-left: 1px solid rgb(250, 246, 246);
+    border-bottom: 1px solid lightgray;
 }
 
 .alert {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 10px;
     margin: 15px;
@@ -82,6 +114,40 @@ main {
     border-radius: 5px;
   }
 
+  /* Graphs & Charts */
+
+  .traffic-header {
+      padding-left: 15px;
+  }
+  
+  .traffic-nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      list-style-type: none;
+      padding-right: 10%;
+      margin-left: -20px;
+      margin-top: 5px;
+  }
+
+  .fill {
+    background-color: rgb(120, 196, 135);
+    border-radius: 25px;
+    padding: 2% 4%;
+    color: whitesmoke;
+}
+
+  .widget-container-full,
+.widget-container-half {
+    width: 95vw;
+}
+
+#daily-chart,
+#mobile-chart {
+    width: 45vw;
+    height: 45vh;
+}
 
 @media (min-width: 768px) {
     .main {
