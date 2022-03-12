@@ -11,6 +11,34 @@ let trafficData = {
     }]
     };
 
+    let hourlyData = {
+        labels: ["7-8am", "9-10am", "11-12am", "1-2pm", "3-4pm", "5-6pm", "7-8pm", "9-10pm", "11-12pm"],
+        datasets: [{
+          data: [150, 185, 140, 200, 150, 175, 125, 35, 50],
+        }]
+     }
+     
+     let dailyData1 = {
+       labels: ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"],
+       datasets: [{
+         data: [2500, 1350, 1400, 1200, 2500, 1750, 2450],
+       }]
+     }
+     
+     let weeklyData = {
+       labels: ["week 1", "week 2", "week 3", "week 4", "week 5", "week 6", "week 7", "week 8", "week 9"],
+       datasets: [{
+         data: [1500, 1700, 2000, 2500, 1400, 1650, 1020, 1500, 1250, 1450],
+       }]
+     }
+     
+     let monthlyData = {
+       labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+       datasets: [{
+         data: [1500, 1850, 1400, 2000, 1500, 1750, 1250, 3500, 5000, 2500, 1100, 1340],
+       }]
+     }
+
     let trafficOptions = {
         backgroundColor: 'rgba(112, 104, 201, .5)',
         fill: true,
@@ -30,8 +58,84 @@ let trafficData = {
     }
 };
 
-    let trafficChart = new Chart(trafficCanvas, {
-        type: 'line',
-        data: trafficData,
-        options: trafficOptions
-    });
+let trafficChart = new Chart(trafficCanvas, {
+    type: 'line',
+    data: trafficData,
+    options: trafficOptions
+  });
+  
+  const dailyCanvas = document.getElementById("daily-chart");
+
+  const dailyData =  {
+    labels: ["S", "M", "T", "W", "T", "F", "S"],
+    datasets: [{
+        label: '# of Hits',
+        data: [75, 115, 175, 125, 225, 200, 100],
+        backgroundColor: '#7477BF',
+        borderWidth: 1
+  }] };
+  const dailyOptions = {
+    scales: {
+      y: {
+          beginAtZero: true
+  } },
+    plugins: {
+        legend: {
+        display: false
+      }
+  } };
+
+  let dailyChart = new Chart(dailyCanvas, {
+    type: 'bar',
+    data: dailyData,
+    options: dailyOptions
+  });
+
+  const mobileCanvas = document.getElementById("mobile-chart");
+
+  const mobileData = {
+    labels: ["Desktop", "Tablet", "Phones"],
+    datasets: [{
+      label: '# of Users',
+      data: [2000, 550, 500],
+      borderWidth: 0,
+      backgroundColor: [
+        '#7477BF',
+        '#78CF82',
+        '#51B6C8'
+  ] }]
+  }
+
+  const mobileOptions = {
+    aspectRatio: 1.9,
+    plugins: {
+      legend: {
+        position: 'right',
+        labels: {
+          boxWidth: 20,
+          fontStyle: 'bold'
+        }
+  } }
+  };
+
+  let mobileChart = new Chart(mobileCanvas, {
+    type: 'doughnut',
+    data: mobileData,
+    options: mobileOptions
+  });
+
+  const user = document.getElementById("userField");
+const message = document.getElementById("messageField");
+const send = document.getElementById("send");
+
+send.addEventListener('click', () => {
+    // ensure user and message fields are filled out
+    if (user.value === "" && message.value === "") {
+      alert("Please fill out user and message fields before sending");
+    } else if (user.value === "" ) {
+      alert("Please fill out user field before sending");
+    } else if (message.value === "" ) {
+      alert("Please fill out message field before sending");
+    } else {
+      alert(`Message successfully sent to: ${user.value}`);
+  } });
