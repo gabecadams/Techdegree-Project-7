@@ -18,9 +18,9 @@
 .traffic,
 .daily,
 .mobile,
-.social-container,
+.social-stats,
 .members-container,
-.recent-container,
+.activity,
 .message {
     border-bottom: 2px solid lightgray;
     padding-bottom: 10px;
@@ -37,12 +37,17 @@ header {
     padding: 3%;
 }
 
-.bell {
+.notifications {
     display: flex;
-    flex-basis: 20%;
-    justify-content: flex-end;
-    height: 20px;
-    width: 20px; 
+    align-items: center;
+    height: 100%;
+    border-right: solid 1px lightgray;
+    margin-right: 40px;
+}
+
+.bell {
+    height: auto;
+    width: 20px;
 }
 
 .notifications-dot {
@@ -51,29 +56,27 @@ header {
     background: rgb(92, 216, 43);
     border-radius: 50%;
     margin-bottom: 25px;
-}
-
-.line-break {
-    border-right: 1px solid rgb(145, 142, 142);
-    height: 3.5rem;
-    flex-basis: 15%;
-    margin-left: -15px;
+    margin-right: 10px;
 }
 
 .profile {
     display: flex;
-    flex-direction: row;
-    justify-content: end;
+    justify-content:right;
+    align-items: center;
 }
 
 .profile-pic {
     height: auto;
-    width: 25%;
+    width: 65%;
     border-radius: 100%;
 }
 
 .name {
- padding-left: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 5px;
+    
 }
 
 /* Navigation */
@@ -224,38 +227,116 @@ svg {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 10px;
 }
 
 .members {
+    padding-top: 10px;
     padding-left: 15px;
 }
 
 .activity {
+    padding-top: 10px;
+}
+
+.activity-header {
     padding-left: 15px;
 }
 
-.message {
+/* Message User */
+
+.message-header {
+    padding-top: 10px;
     padding-left: 15px;
+    padding-bottom: 10px;
 }
 
 .widget-container {
     display: flex;
     flex-direction: column;
-    margin-left: 4%;
-    margin-right: 4%
+    padding-left: 10px;
+    padding-right: 10px;  
+}
+
+.form-area {
+    min-height: 100px;
+    margin-top: 10px;
+}
+
+.button-primary {
+    margin-top: 10px;
+    height: 50px;
+    background-color: rgb(116, 119, 191);
+    width: 100%;
+    color: #fff;
+}
+
+/* Settings */
+
+.settings-header {
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 15px;
 }
 
 .settings-button {
-  display: flex;
-  flex-direction: row;
-  justify-content:space-around;
-  width: 50%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 50%;
 }
 
-.checkbox {
-    height: auto;
-    width: 50px%;
+.switch-light.switch-ios {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 50%;
 }
+
+/* Timezone Dropdown */
+
+.timezone-dropdown {
+    display: flex;
+    justify-content: center;
+}
+
+#timezone {
+    width: 100%;
+    margin: 10px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    }
+
+/* Save & Cancel buttons */
+
+#save {
+    width: 50%;
+    height: 40px;
+    margin: 10px;
+    color: #fff;
+}
+
+#cancel {
+    width: 50%;
+    height: auto;
+    margin: 10px;
+    background-color: rgb(121, 121, 118);
+    color: #fff;
+}
+
+/* Media Queries */
 
 @media (min-width: 768px) {
     .main {
