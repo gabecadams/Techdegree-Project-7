@@ -148,7 +148,7 @@ main {
     padding-bottom: 10px;
     }
 
-    .traffic {
+  .traffic {
         padding-top: 10px;
         padding-bottom: 10px;
     }
@@ -208,11 +208,12 @@ svg {
     padding-left: 15px;
 }
 
-
 .members-container {
     padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 10px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -240,11 +241,8 @@ svg {
     padding-left: 15px;
 }
 
-.activity {
-    padding-top: 10px;
-}
-
 .activity-header {
+    padding-top: 10px;
     padding-left: 15px;
 }
 
@@ -411,21 +409,29 @@ strong {
 }
 
 @media (min-width: 768px) {
-    .main-header, .alert, .traffic, .social-stats, .members-section, .activity, .message, .settings-section {
+    .main-header, .alert, .traffic, .social-stats, .members, .activity, .message, .settings-section {
     grid-column: 1 / span 2;
     }
     
     .social-container {
         display: flex;
         height: 100px;
-        width: 230px;
+        flex-basis: 33.333%;
         margin: 10px; 
     }
 
     .social-text {
         display: flex;
         flex-direction: column;
-        align-items: center;
+    }
+
+    .social-text p:last-of-type {
+        font-size: 35px;
+    }
+      
+    .social-container svg {
+        width: 65px;
+        height: 65px;
     }
 
     .social-image {
@@ -436,7 +442,7 @@ strong {
 
 
     @media (min-width: 768px) {
-        .daily {
+        .daily, {
         grid-column: 1 / span 1;
         }
         }
@@ -467,10 +473,48 @@ strong {
 
                 .members-container {
                     display: flex;
-                    flex-direction: column;
-                    justify-content: flex-start;
-                    align-items: flex-start;
+                    align-items: center;
                 }
+
+               /*  */
+                .members p,
+                .activity p {
+                    margin-top: 10px;
+                }
+                .members-container {
+                    display: flex;
+                    padding: 10px;
+                    align-items: center;
+                }
+                .members-container img {
+                    margin: 0 10px 0 0;
+                }
+                .members-container p,
+                .members-container a {
+                    margin: 0;
+                    text-align: start;
+                }
+                .members .members-container p:last-child {
+                    margin-left: auto;
+                }
+                .activity-container {
+                    display: flex;
+                    justify-content: flex-start;
+                }
+                .activity p:last-child {
+                    margin-bottom: 0px;
+                }
+                .members-text {
+                    margin: 0;
+                }
+
+
+                /*  */
+
+
+
+
+
 
                 .timezone-dropdown {
                     width: 200%;
