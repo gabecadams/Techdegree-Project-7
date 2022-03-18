@@ -350,15 +350,19 @@ strong {
 	}
 	/* Header */
 	header {
-		padding: 10px;
+		display: flex;
+        padding: 10px;
 	}
 	.notifications {
-		margin-left: 350px;
+		display: flex;
+        flex-basis: 85%;
 		height: 80%
 	}
 	.bell {
-		height: auto;
+		display: flex;
+        height: auto;
 		width: 40px;
+        margin-left: 400px;
 	}
 	.notifications-dot {
 		height: 8px;
@@ -387,6 +391,15 @@ strong {
 		justify-content: flex-start;
 		align-items: center;
 	}
+
+    .traffic-nav {
+       justify-content: flex-end;
+    }
+
+    .traffic-nav li {
+        margin-right: 25px;
+    }
+    
 		main {
 			display: grid;
 			grid-template-columns: 50%;
@@ -468,8 +481,6 @@ strong {
  .bottom-p {
      padding-left: 325px;
   }
-
-  
 	.timezone-dropdown {
 		width: 100%;
 	}
@@ -479,4 +490,27 @@ strong {
 		height: auto;
 		width: 100%;
 	}
+}
+
+@media (min-width: 1024px) {
+	.grid-container {
+        display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas: "header header""nav main";
+	}
+
+	.bell {
+		margin-left: 650px;
+	}
+
+	.profile {
+		padding-right: 20px;
+	}
+	
+    .mobile,
+    .activity,
+    .message,
+    .settings {
+      grid-column: 2 / span 1;
+    }
 }
