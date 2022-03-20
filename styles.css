@@ -468,19 +468,41 @@ strong {
         height: 65px;
       }
 
-    .members-container {
-        flex-direction: row;
-      }
-
-	.members-container img {
+      .members-container img {
         width: 65px;
         height: 65px;
-		margin: 0 10px 0 0;
 	}
 
+    .members-container {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+      }
+
+      .members-container {
+        padding-top: 10px;
+        padding-left: 15px;
+        padding-right: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    
+    .members-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 20px;
+        padding-left: 20px;
+    }
+
+    .div p:last-of-type {
+        text-align: end;
+    }
+
  .bottom-p {
-     padding-left: 325px;
+    text-align: end;
   }
+
 	.timezone-dropdown {
 		width: 100%;
 	}
