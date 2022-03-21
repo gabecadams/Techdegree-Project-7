@@ -272,7 +272,6 @@ main {
 	color: #fff;
 }
 
-
 /* Settings */
 
 .settings-header {
@@ -289,12 +288,12 @@ strong {
 	width: 60%;
 }
 
-.switch-light {
-	display: flex;
-	height: 3em;
-	align-items: center;
+.switch-ios.switch-light span {
+    flex-basis: 16%;
 }
-
+.switch-ios.switch-light strong {
+    flex-basis: 30%;
+}
 
 /* Timezone Dropdown */
 
@@ -494,19 +493,12 @@ strong {
     }
 
  .bottom-p {
-    margin:auto;
+    margin-left:auto;
   }
-
-	.timezone-dropdown {
-		width: 100%;
-	}
-    
-	.settings-button {
-		display: flex;
-		justify-content: center;
-		height: auto;
-		width: 100%;
-	}
+    .switch-light {
+       display: flex;
+       justify-content:start;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -525,9 +517,17 @@ strong {
 	}
 	
     .mobile,
-    .activity,
-    .message,
-    .settings {
+    .activity {
       grid-column: 2 / span 1;
     }
-}
+
+    .message {
+      grid-column: 1 / span 1;
+    }
+
+    .settings-section {
+      display: grid;
+      grid-column: 2 / span 1;
+      
+    }
+      }
