@@ -85,16 +85,16 @@ nav {
 nav {
 	display: flex;
 	justify-content: space-evenly;
-	background-color: #e3e3e9;
+	background-color: rgb(72, 70, 114);
 }
 
-nav img {
+nav svg {
+    fill: whitesmoke;
 	width: 30px;
 	margin: auto;
 	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-bottom: 5px; 
 }
-
 
 /* Dashboard */
 
@@ -119,8 +119,9 @@ main {
 	border-bottom: 1px solid lightgray;
 }
 
-.alert {
+.alert-banner {
 	display: flex;
+    justify-content: space-between;
 	align-items: center;
 	padding: 10px;
 	margin: 15px;
@@ -259,9 +260,15 @@ main {
 	padding-right: 10px;
 }
 
+.form-field {
+    background-color:rgba(240, 240, 240, 0.85);
+    padding-left: 5px;
+}
 .form-area {
 	min-height: 100px;
 	margin-top: 10px;
+    background-color: rgba(240, 240, 240, 0.85);
+    
 }
 
 .button-primary {
@@ -281,19 +288,27 @@ main {
 }
 
 .settings {
-	padding-left: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-left: 15px;
 }
 
-strong {
-	width: 60%;
+.switch-ios.switch-light {
+    display: flex;
+    align-items: center;
+    margin: 14px 0;
 }
 
 .switch-ios.switch-light span {
-    flex-basis: 16%;
+    flex-basis: 35%;
 }
+
 .switch-ios.switch-light strong {
-    flex-basis: 30%;
+    flex-basis: 60%;
 }
+
+
 
 /* Timezone Dropdown */
 
@@ -521,13 +536,32 @@ strong {
       grid-column: 2 / span 1;
     }
 
-    .message {
-      grid-column: 1 / span 1;
-    }
-
-    .settings-section {
-      display: grid;
-      grid-column: 2 / span 1;
-      
-    }
+    .members-section {
+        grid-column: 1 / span 1;
+      }
+      .members-text p {
+        text-align: left;
+        font-size: 16px;
+      }
+      #save, #cancel {
+        height: 50px;
+        align-self: flex-end;
+      }
+      .message {
+        border-bottom: none;
+      }
+      .switch-ios.switch-light strong {
+        flex-basis: 180px;
+      }
+      .switch-ios.switch-light {
+        margin-bottom: 10px;
+        align-items: center;
+      }
+      .switch-ios.switch-light input:checked ~ span {
+        border-color: rgb(116, 119, 191);
+        box-shadow: inset 0 0 0 30px rgb(116, 119, 191);
+      }
+      .switch-ios.switch-light input:checked ~ span a {
+        border-color: rgb(116, 119, 191);
+      }
       }
