@@ -47,6 +47,11 @@ header {
 	width: 20px;
 }
 
+.bell:hover {
+    background: aliceblue;
+    transition-duration: .4s;
+}
+
 .notifications-dot {
 	height: 8px;
 	width: 8px;
@@ -244,6 +249,10 @@ main {
 	padding-left: 15px;
 }
 
+.bottom-p {
+    visibility: hidden;
+}
+
 
 /* Message User */
 
@@ -268,6 +277,7 @@ main {
 	min-height: 100px;
 	margin-top: 10px;
     background-color: rgba(240, 240, 240, 0.85);
+    padding-left: 5px;
     
 }
 
@@ -308,6 +318,13 @@ main {
     flex-basis: 60%;
 }
 
+.switch-ios.switch-light input:checked ~ span {
+    border-color: rgb(116, 119, 191);
+    box-shadow: inset 0 0 0 30px rgb(116, 119, 191);
+  }
+  .switch-ios.switch-light input:checked ~ span a {
+    border-color: rgb(116, 119, 191);
+  }
 
 
 /* Timezone Dropdown */
@@ -508,12 +525,25 @@ main {
     }
 
  .bottom-p {
-    margin-left:auto;
+     visibility: visible;
+     margin-left:auto;
   }
-    .switch-light {
-       display: flex;
-       justify-content:start;
-    }
+
+    .switch-ios.switch-light strong {
+        flex-basis: 180px;
+      }
+      .switch-ios.switch-light {
+        margin-bottom: 10px;
+        align-items: center;
+        width: 50%;
+      }
+      .switch-ios.switch-light input:checked ~ span {
+        border-color: rgb(116, 119, 191);
+        box-shadow: inset 0 0 0 30px rgb(116, 119, 191);
+      }
+      .switch-ios.switch-light input:checked ~ span a {
+        border-color: rgb(116, 119, 191);
+      }
 }
 
 @media (min-width: 1024px) {
@@ -532,11 +562,15 @@ main {
 	}
 	
     .mobile,
-    .activity {
+    .activity,
+    .settings-section
+    {
       grid-column: 2 / span 1;
     }
 
-    .members-section {
+    .members-section,
+        .message
+         {
         grid-column: 1 / span 1;
       }
       .members-text p {
@@ -549,6 +583,9 @@ main {
       }
       .message {
         border-bottom: none;
+      }
+      .form-area {
+          height: 127px;
       }
       .switch-ios.switch-light strong {
         flex-basis: 180px;
